@@ -1,0 +1,25 @@
+resources:
+  - name: git_repo
+    type: GitRepo
+    configuration:
+      path: deepikasl/basic-templates-example
+      gitProvider: deepikaGithub
+      branches:
+        include: main    
+
+pipelines:
+  - name: {{ .Values.PipelineConfig.pipelineName }}
+    configuration:
+      environmentVariables:
+        readOnly:
+          version: {{ .Values.PipelineConfig.version }}
+    steps:
+      - name: first_step
+        type: Bash
+        configuration:
+          inputResources:
+            - name: git_repo
+        execution:
+          onExecute:
+            - pushd $res_git_repo_resourcePath
+            - ./run.sh {{ .Values.PipelineConfig.serviceName }} $version
