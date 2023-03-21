@@ -2,4 +2,4 @@ PipelineConfig:
   pipelineName: project_1_pipeline
   version: 1.0.0
   serviceName: project-1
-  resourceName: project_2_repo
+  resourceName: project_1_reppo
