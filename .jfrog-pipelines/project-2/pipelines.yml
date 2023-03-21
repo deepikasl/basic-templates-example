@@ -1,0 +1,16 @@
+pipelines:
+  - name: sample_pipeline_project_2
+    configuration:
+      environmentVariables:
+        readOnly:
+          version: 1.0.0
+    steps:
+      - name: first_step
+        type: Bash
+        configuration:
+          inputResources:
+            - name: git_repo
+        execution:
+          onExecute:
+            - pushd $res_git_repo_resourcePath
+            - ./run.sh project-2 $version
