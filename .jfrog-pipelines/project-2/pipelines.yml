@@ -1,3 +1,11 @@
+resources:
+  - name: project_2_repo
+    type: GitRepo
+    configuration:
+      path: deepikasl/basic-templates-example
+      gitProvider: deepikaGithub
+      branches:
+        include: main    
 pipelines:
   - name: sample_pipeline_project_2
     configuration:
@@ -9,8 +17,8 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: git_repo
+            - name: project_2_repo
         execution:
           onExecute:
-            - pushd $res_git_repo_resourcePath
+            - pushd $res_project_2_repo_resourcePath
             - ./run.sh project-2 $version
