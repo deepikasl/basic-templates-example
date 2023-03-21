@@ -20,5 +20,5 @@ pipelines:
             - name: project_2_repo
         execution:
           onExecute:
-            - pushd ${res_"{{ .Values.PipelineConfig.resourceName }}"_repo_resourcePath}
+            - pushd ${res_project_2_repo_resourcePath}
             - ./run.sh project-2 $version
