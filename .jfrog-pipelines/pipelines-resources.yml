@@ -1,0 +1,8 @@
+resources:
+  - name: git_repo
+    type: GitRepo
+    configuration:
+      path: deepikasl/basic-templates-example
+      gitProvider: deepikaGithub
+      branches:
+        include: main        
