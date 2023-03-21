@@ -1,0 +1,4 @@
+PipelineConfig:
+  pipelineName: project_1_pipeline
+  version: 1.0.0
+  serviceName: project-1
