@@ -1,0 +1,12 @@
+templateRepository:
+  gitProvider: deepikaGithub
+  path: deepikasl/basic-templates-example
+  branch: main
+  templateFolder: templates/sample_pipeline
+ 
+publishTemplate:
+  namespace: basic_templates_demo
+  name: sample_pipeline
+  version: 1.0.0
+  pipelineName: PublishTemplate_deepika
+  artifactoryIntegration: deepikaArt
