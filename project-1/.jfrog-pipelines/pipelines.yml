@@ -8,7 +8,7 @@ resources:
         include: main        
 
 pipelines:
-  - name: sample_pipeline
+  - name: sample_pipeline_project_1
     configuration:
       environmentVariables:
         readOnly:
